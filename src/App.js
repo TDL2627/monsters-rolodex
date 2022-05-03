@@ -10,7 +10,8 @@ constructor(){
 
   // always json object
   this.state = {
-name:'JOHN'
+name:{firstName:'John',lastName:'Wick'},
+age:'200'
   };
 }
 
@@ -21,12 +22,13 @@ name:'JOHN'
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            HELLO WRLD, this is {this.state.name}
+            HELLO WRLD, this is {this.state.name.firstName}  {this.state.name.lastName}  , I am {this.state.age} years old.
           </p>
          <button
          onClick={ ()=>{
             //  Changing state
-             this.setState({name: 'Peter'})
+             this.setState({name:{firstName:'Peter',lastName:'Pan'}})
+             this.setState({age:'15'})
            }
          }
          >Change Name</button>
