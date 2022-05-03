@@ -26,7 +26,7 @@ age:'200'
           </p>
          <button
          onClick={ ()=>{
-            //  Changing state
+            //  Changing state via object
              this.setState({name:{firstName:'Peter',lastName:'Pan'}})
              this.setState({age:'15'})
            }
