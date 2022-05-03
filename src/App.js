@@ -11,27 +11,22 @@ constructor(){
   // always json object
   this.state = {
     monsters:[
-      {
-        name:'Mike',
-        id:'1'
-      },
-      {
-        name:'Dracula',
-        id:'2'
-      },
-      {
-        name:'Venom',
-        id:'3'
-      },
-      {
-        name:'Blob',
-        id:'4'
-      }
+    
     ]
 
   };
 }
-
+componentDidMount(){
+  fetch('https://jsonplaceholder.typicode.com/users')
+  .then((response)=> response.json())
+  .then((users)=>this.setState(()=>{
+    return{monsters: users}
+  },
+  ()=>{
+    console.log(this.state);
+  }
+  ))
+}
 
   render(){
     return (
