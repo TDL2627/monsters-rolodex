@@ -11,7 +11,7 @@ constructor(){
   // always json object
   this.state = {
 name:'JOHN'
-  }
+  };
 }
 
 
@@ -23,7 +23,13 @@ name:'JOHN'
           <p>
             HELLO WRLD, this is {this.state.name}
           </p>
-         <button>Change Name</button>
+         <button
+         onClick={ ()=>{
+            //  Changing state
+             this.setState({name: 'Peter'})
+           }
+         }
+         >Change Name</button>
         </header>
       </div>
     );
