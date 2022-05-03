@@ -10,9 +10,7 @@ constructor(){
 
   // always json object
   this.state = {
-    monsters:[
-    
-    ]
+    monsters:[]
 
   };
 }
@@ -31,8 +29,17 @@ componentDidMount(){
   render(){
     return (
       <div className="App">
-        {
-          this.state.monsters.map((monster)=>{
+        {/* search function */}
+
+<input className='search-box' type='search' placeholder='Search monsters' onChange={(event)=>{
+  const filteredMonsters =this.state.monsters.filter((monster)=>{
+    return monster.name.includes(event.target.value);
+  });
+  this.setState(()=>{
+    return{monsters:filteredMonsters}
+  })
+}}/>
+        {this.state.monsters.map((monster)=>{
   return <div key={monster.id}><h1>{monster.name}</h1></div>
           })}
      
