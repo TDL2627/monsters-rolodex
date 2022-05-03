@@ -24,14 +24,30 @@ age:'200'
           <p>
             HELLO WRLD, this is {this.state.name.firstName}  {this.state.name.lastName}  , I am {this.state.age} years old.
           </p>
+          {/* changing state via function */}
+          <button 
+          onClick={()=>{
+            this.setState((state, props) => {
+              return {
+                name:{firstName:'Peter',lastName:'Pan'},
+              }
+            },()=>{
+              console.log(this.state)
+            });
+          }}
+          
+          >
+Change state via function
+          </button>
+          <br></br>
          <button
          onClick={ ()=>{
             //  Changing state via object
              this.setState({name:{firstName:'Peter',lastName:'Pan'}})
-             this.setState({age:'15'})
-           }
-         }
-         >Change Name</button>
+             this.setState({age:'15'});
+            //  console.log(this.state)
+           }}
+         >Change Name via object</button>
         </header>
       </div>
     );
