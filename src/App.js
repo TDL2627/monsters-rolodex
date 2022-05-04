@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import SearchBox from './components/search-box/search-box.component';
 import CardList from './components/card-list/card-list.component';
 import './App.css';
 
@@ -42,9 +42,7 @@ onSearchChange=(event)=>{
     });
     return (
       <div className="App">
-        {/* search function */}
-
-<input className='search-box' type='search' placeholder='Search monsters' onChange={onSearchChange}/>
+     <SearchBox onChangeHandler={onSearchChange}  placeholder="search monsters" className="search-box"/>
      <CardList monsters={filteredMonsters}/>
 
       </div>
