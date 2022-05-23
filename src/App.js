@@ -40,7 +40,7 @@ class App extends Component {
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
     const filteredMonsters = monsters.filter((monster) => {
-      return monster.name.toLocaleLowerCase().includes(searchField);
+      return monster.username.toLocaleLowerCase().includes(searchField);
     });
     return (
       <div className="App">
